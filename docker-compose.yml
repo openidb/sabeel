@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  kavita:
+    image: jvmilazz0/kavita:latest
+    container_name: kavita
+    ports:
+      - "5001:5000"
+    volumes:
+      - ./kavita/config:/kavita/config
+      - ./kavita/manga:/manga
+      - ./kavita/library:/library
+    environment:
+      - TZ=Asia/Riyadh
+    restart: unless-stopped
